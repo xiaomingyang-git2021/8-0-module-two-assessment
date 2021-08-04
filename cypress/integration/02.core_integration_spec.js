@@ -1,4 +1,3 @@
-
 describe("Core interaction", () => {
   it("Select an option to view movie information", () => {
     cy.get("select").select("My Neighbor Totoro");
@@ -10,21 +9,23 @@ describe("Core interaction", () => {
   });
 
   it("Enter a review that displays on the page", () => {
-    cy.get('form > input[type="text"]')
+    cy.get('form input[type="text"]')
       .type("This movie was great!  I loved the dance to grow the tree.")
-      .get('form > input[type="submit"]')
+      .get('form input[type="submit"]')
       .click();
     cy.get("li").then((items) => {
       const actual = items[0].innerHTML;
       console.log(items);
-      const titlePattern = /.*(<strong>|<b>)My Neighbor Totoro.+(<\/strong>|<\/b>).*/g;
-      const descriptionPattern = /This movie was great!  I loved the dance to grow the tree./g;
+      const titlePattern =
+        /.*(<strong>|<b>)My Neighbor Totoro.+(<\/strong>|<\/b>).*/g;
+      const descriptionPattern =
+        /This movie was great!  I loved the dance to grow the tree./g;
       expect(actual).to.match(titlePattern);
       expect(actual).to.match(descriptionPattern);
     });
   });
   it("clears the input after form submission", () => {
-    cy.get('form > input[type="text"]').should("have.value", "");
+    cy.get('form input[type="text"]').should("have.value", "");
   });
 
   it("changes the movie information", () => {
@@ -45,8 +46,10 @@ describe("Core interaction", () => {
     cy.get("li").then((items) => {
       const actual = items[0].innerHTML;
       console.log(items);
-      const titlePattern = /.*(<strong>|<b>)My Neighbor Totoro.+(<\/strong>|<\/b>).*/g;
-      const descriptionPattern = /This movie was great!  I loved the dance to grow the tree./g;
+      const titlePattern =
+        /.*(<strong>|<b>)My Neighbor Totoro.+(<\/strong>|<\/b>).*/g;
+      const descriptionPattern =
+        /This movie was great!  I loved the dance to grow the tree./g;
       expect(actual).to.match(titlePattern);
       expect(actual).to.match(descriptionPattern);
     });

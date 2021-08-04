@@ -22,7 +22,7 @@ describe("Initial Layout", () => {
     cy.get("select").should("exist");
   });
   it("has a select box containing the title of each movie", () => {
-    cy.get("select > option").should("have.length", 22);
+    cy.get("select > option").should("have.length", 21);
     cy.get("select > option").then((options) => {
       const actual = [...options]
         .map((o) => o.innerText)
@@ -61,7 +61,7 @@ describe("Initial Layout", () => {
   });
 
   it("has a form with a text input and a submit input", () => {
-    cy.get("form > input").then((inputs) => {
+    cy.get("form input").then((inputs) => {
       expect([...inputs].map((i) => i.type)).to.have.members([
         "text",
         "submit",
