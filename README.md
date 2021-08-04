@@ -1,67 +1,101 @@
-[![Pursuit Logo](https://avatars1.githubusercontent.com/u/5825944?s=200&v=4)](https://pursuit.org)
+# Module Two Assessment
 
-# Pursuit-Core-Module-Two-Final-Assessment
+This challenge is designed to assess the HTML, CSS, and JavaScript skills you have gained so far.
 
-## Getting Started 
-* Fork this repo
-* Clone the forked repository
-* `cd` to the directory where you cloned it
-* `npm install` to install dependencies
-* `npm test` to open the cypress testing window
+## Assessment Setup
 
-> *Note*: Remember to `git add`, `git commit` and `git push` regularly
+### Getting started
 
-## Submission Guidelines
-  * When finished, commit and push your work.
-  * Make a pull request on github.
-  * Submit the link to your pull request on Canvas. 
+1. Fork and clone this repository.
 
+1. Navigate to the cloned repository's directory on your command line. Then, run the following command:
+
+   ```
+   npm install
+   ```
+
+   This will install the libraries needed to run the tests.
+
+1. Open up the repository in VSCode. Follow the instructions below to complete the Lab.
+
+### Tests
+
+To run the tests, you can run the following command from the command line. You will need to be in the root directory of your local directory.
+
+```
+npm test
+```
+
+This will open the Cypress testing window, where you can click to run an individual suite of tests or all of the tests at once.
+
+## Submitting
+
+To submit the assessment, you should do the following:
+
+- [ ] Create a pull request against the original repository.
+- In your pull request description, add screenshots of the following:
+  - [ ] Your landing page, when a user first arrives.
+  - [ ] Your landing page, after choosing a dropdown menu.
+  - [ ] Your landing page, after submitting two reviews.
+- [ ] Submit a link to your pull request on Canvas.
 
 ## Assessment Details
 
-Create an app using the [Studio Ghibli API](https://ghibliapi.herokuapp.com/#) that allows users to view and review each movie.
+You will create an application using HTML, CSS, and JavaScript that accesses the Studio Ghibli API and allows users to review each movie that was made by the studio.
 
-This app should have (in order of placement in the HTML):
+### The API
 
-- An image of the [Studio Ghibli logo](https://upload.wikimedia.org/wikipedia/en/thumb/c/ca/Studio_Ghibli_logo.svg/1200px-Studio_Ghibli_logo.svg.png)
-- A header (`h1`) that reads "Ghibli Review App"
-- A `select` box that contains the title of each movie available in the API, as well as a default blank selection
-- A `section`, empty of text and with the id `display-info`, that will contain the title (`h3`), release year (`p`), and description (`p`) of the selected film.
-- A `form`, including a "text" `input` and a "submit" `input`, that allows users to submit (not save, just add to the frontend) a review of that film. On submission the input should clear.
-- A `ul` underneath that `form` that should contain the submitted reviews of each film.
+The API can be accessed via the link below.
 
-Please feel free to include additional `sections`s and elements if they make styling the application easier.
+- [Studio Ghibli API](https://ghibliapi.herokuapp.com)
 
-The user should be able to:
+You will only need to make one API call in your application to receive all movies. Look under "Endpoints" to find the URL you will need to access.
 
-- Use the `select` box to select a specific film. When they select a film, information about that film (title, release year, description) should populate in the `display-info` section below. When they select a different film, this information should be replaced.
-- Use the `form`, below the movie information, to submit a review. Each review should be a new `li`, with the selected film's title (in bold) and a review body (not bold).
+### Style
 
-## Styling
+While there are no tests for it, your page should look similar to the following page.
 
-Assume default styling unless explicitly articulated here. **Do not** utilize CSS Reset.
+![Example of the landing page.](./images/readme/landing.png)
 
-Your website should be responsive and work on screens of different sizes.
+While it does not need to look exactly the same, it should include the following:
 
-- **Body**
-  - Monospace font for all text (inputs excepted - default is fine).
-  - `lavender` background color.
-  - Arrange content in a column, centered on the page width-wise.
-- **Header**
-  - Header should contain the `image` and `h1` tags.
-  - Width: 70 percent. Height: 150px.
-  - Image and header text should be horizontally oriented.
-  - Image and header text should be on opposite sides of the header. Vertically, they should both be positioned in the center of their containing `div`.
-  - Image should have the same height as the header (150px).
-  - Header should have a margin of 30 pixels on the bottom and a padding of 10 pixels on all sides.
-  - Header background color should be `skyblue`.
-- **Main Area**
-  - Main area should contain all other content on the page.
-  - Width: 60 percent.
-  - Content should be oriented in a column, justified left.
-- **Review Text Input**
-  - The `text` input should have an explicit `width` of 400 pixels.
+- The page's background should be the color `lavender`.
+- There should be a header, which takes up about 75% of the page's width.
+- The header's background should be `skyblue`.
+- An image of the studio's logo should be in the header and should be the same height as the header. The image can be found in the `images/` folder.
+- All non-input text should be of the font `monospace`.
 
-Your app should end up looking something like this:
+### Functionality
 
-![screen](./screen.png)
+The page should fit the following requirements:
+
+- When landing on the page, the user should see:
+
+  - [ ] The header, which includes the studio logo and a top-level heading (i.e. `h1`), with the name of the application.
+  - [ ] A dropdown that contains all Studio Ghibli movie titles, in the order they are received from the API.
+  - [ ] A blank `section` after the dropdown, which has an ID of `display-info`. More information will be displayed here, later on.
+  - [ ] A text input where the user, can enter review text, inside of a form and accompanied by a `submit` button.
+  - [ ] An empty `ul` after the form. More information will be displayed here, later on.
+
+- When selecting one of the options from the dropdown list, the user should see:
+
+  - [ ] An `h3` with the movie's title appear in the `display-info` section of the page.
+  - [ ] A `p` with the movie's release year.
+  - [ ] A `p` with the description of the movie.
+
+  This content should change each time the user choose a new option in the dropdown list.
+  ![Page view when a dropdown option is selected](./images/readme/show.png)
+
+- When the user enters their review into the text input and presses the "Submit Review" button, they should see:
+
+  - [ ] The review, inside of an `li`, with the name of the movie in a `strong` element and the text of the review afterwards.
+  - [ ] The review text should be cleared from the text input.
+
+  ![Page after the review has been submitted.](./images/readme/submit-review.png)
+
+- [ ] If the user selects a different dropdown option after making the review, all of the reviews should stay where they are.
+      ![Page after multiple reviews have been submitted.](./images/readme/multi-review.png)
+
+### Commit history
+
+Make sure to commit often after specific features are complete. Use sensible commit messages.
