@@ -13,10 +13,7 @@ describe("Initial Layout", () => {
     cy.get("img").should("exist");
     cy.get("img")
       .should("have.attr", "src")
-      .should(
-        "include",
-        "https://upload.wikimedia.org/wikipedia/en/thumb/c/ca/Studio_Ghibli_logo.svg/1200px-Studio_Ghibli_logo.svg.png"
-      );
+      .should("include", "./images/ghibli-logo.png");
   });
   it("has a select box", () => {
     cy.get("select").should("exist");
