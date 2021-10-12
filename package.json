@@ -18,6 +18,7 @@
   "homepage": "https://github.com/joinpursuit/Pursuit-Core-Module-Two-Final-Assessment#readme",
   "devDependencies": {
     "cypress": "^8.1.0",
+    "cypress-watch-and-reload": "^1.5.4",
     "fast-glob": "^3.2.5",
     "junit-report-merger": "^2.1.0",
     "junitxml-to-javascript": "^1.1.4",
