@@ -1,0 +1,50 @@
+body {
+    background-color: lavender;
+}
+
+img {
+    float: left;
+    display: block;
+    margin: 0 auto;
+    background-color: rgb(123, 205, 233);
+    width: auto;
+    height: 400px;
+    
+}
+
+.ghibli {
+    float: right;
+    background-color: transparent;
+    /* background-image: url() ; */
+}
+
+#main {
+    display: grid;
+    grid-template-areas: 
+    "header header"
+    "selector1 selector1"
+    "display display"
+    "selector2 selector2";
+    grid-gap: 5px;
+    max-width: 700px;
+    width: 75%;
+    margin: 0 auto;
+}
+
+#header {
+    grid-area: header;
+    text-align: right;
+    
+}
+
+#ghibli-selector-1 {
+    grid-area: selector1;
+}
+
+#display-info {
+    grid-area: display;
+}
+
+#ghibli-selector-2 {
+    grid-area: selector2;
+}
