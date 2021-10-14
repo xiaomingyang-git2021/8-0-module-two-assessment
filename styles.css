@@ -1,43 +1,42 @@
- body {
+body {
     display: grid;
-    background: lavender;
-    /* grid-template-columns: 1fr 1fr 1fr 1fr;
+    background-color: lavender;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
-    font-family: monospace;
-    grid-gap: 5px; */
+    font-family: monospace
 }
 
-#header {
-    display: inline-block;
+header {
     background-color: skyblue;
     grid-column: 2 / span 2;
-    height: auto;
 }
 
- h1 {
+h1 {
     text-align: right;
     margin-right: 5rem;
 }
 
 img {
-    width: 75%;
-    height: auto;
-    background-color: rgb(123, 205, 233);  
+    width: 50%;
+    
 }
 
 #dropdown {
     grid-row: 2;
     grid-column: 2 / span 1;
-    margin-left: 1rem; 
- } 
+    background-color: lavender;
+    border: 1px solid lavender;
+    margin-left: 1rem;
+}
 
- section { 
+
+section {
     grid-row: 3;
     grid-column: 2 / span 2;
     margin-left: 2rem;
-} 
+}
 
- form {
+form {
     grid-row: 4;
     grid-column: 2 / span 4;
 }
@@ -47,5 +46,5 @@ ul {
     grid-column: 2 / span 4;
     padding: 20px;
     margin-left: 2rem;
- }  
+}
 
