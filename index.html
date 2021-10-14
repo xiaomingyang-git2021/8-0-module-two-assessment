@@ -4,35 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="./script.js"></script>
+    <link rel=stylesheet href="style.css" />
+    <script defer src="script.js"></script>
     <title>Document</title>
 </head>
 <body>
-    <div id="main">
-        <header id="header">
-            <img src="./images/ghibli-logo.png" alt="">
-            <div>
-                <h1 class="ghibli">Ghibli Review App</h1>
-            </div>
-            
-        </header>
-        <form id="ghibli-selector-1" action="">
-            <select name="ghibli-select" id="ghibli-select">
-                <option value="default">--Choose a movie to watch--</option>
-            </select>
-        </form>
-        <section id="display-info"></section>
-        <form id="ghibli-selector-2" action="">
-            <label for="">Your Review</label>
-            <input type="text">
-            <input type="submit" value="Submit Riview">
-            <ul></ul>
-        </form>
-    </div>
-    
-    
-    
-
+    <header>
+        <h1>Ghibli Review App</h1>
+        <img src='./images/ghibli-logo.png' alt='Logo image'>
+    </header>    
+    <select id='dropdown'></select>    
+    <section id='display-info'></section>
+    <form>
+        <label for="Your Review">Your Review</label>
+        <input type="text" name="review" id="review">
+        <input type="submit" value="Submit Review">
+    </form>
+    <ul></ul>
 </body>
 </html>

@@ -1,50 +1,53 @@
 body {
-    background-color: lavender;
+    display: grid;
+    background-color: rgb(230, 230, 248);
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    font-family: monospace;
+    grid-gap: 5px;
+}
+
+body > * {
+    grid-gap: 5px;
+}
+
+header {
+    /* background-color: skyblue; */
+    grid-column: 2 / span 2;
+}
+
+h1 {
+    text-align: right;
+    margin-right: 5rem;
 }
 
 img {
-    float: left;
-    display: block;
-    margin: 0 auto;
-    background-color: rgb(123, 205, 233);
-    width: auto;
-    height: 400px;
-    
+    width: 50%;
+    background-color: rgb(123, 205, 233);  
 }
 
-.ghibli {
-    float: right;
-    background-color: transparent;
-    /* background-image: url() ; */
+#dropdown {
+    grid-row: 2;
+    grid-column: 2 / span 1;
+    /* background-color: lavender;
+    border: 1px solid lavender; */
+    margin-left: 1rem;
 }
 
-#main {
-    display: grid;
-    grid-template-areas: 
-    "header header"
-    "selector1 selector1"
-    "display display"
-    "selector2 selector2";
-    grid-gap: 5px;
-    max-width: 700px;
-    width: 75%;
-    margin: 0 auto;
+section {
+    grid-row: 3;
+    grid-column: 2 / span 2;
+    margin-left: 2rem;
 }
 
-#header {
-    grid-area: header;
-    text-align: right;
-    
+form {
+    grid-row: 4;
+    grid-column: 2 / span 4;
 }
 
-#ghibli-selector-1 {
-    grid-area: selector1;
-}
-
-#display-info {
-    grid-area: display;
-}
-
-#ghibli-selector-2 {
-    grid-area: selector2;
+ul {
+    grid-row: 4;
+    grid-column: 2 / span 4;
+    padding: 20px;
+    margin-left: 2rem;
 }
